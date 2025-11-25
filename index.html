@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 8 Plan: Momentum</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.net" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Spectral:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #f8fafc;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Spectral', serif;
+        }
+        .nav-link, .schedule-block {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-link.active {
+            background-color: #334155;
+            color: white;
+        }
+        .schedule-block.active {
+            background-color: #dbeafe;
+            border-color: #3b82f6;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+        }
+        .schedule-block.active h3 {
+            color: #1e40af;
+        }
+        .nav-link:not(.active):hover {
+            background-color: #e2e8f0;
+        }
+        .schedule-block:not(.active):hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+        }
+        .content-pane {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .math {
+            font-family: "Times New Roman", Times, serif;
+            font-style: italic;
+        }
+        .math-block {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-style: italic;
+        }
+        .misconception {
+            border-left: 3px solid #ef4444;
+            padding-left: 12px;
+            margin: 8px 0;
+        }
+        .vocab-term {
+            background-color: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div class="flex flex-col md:flex-row h-screen">
+        
+        <!-- Left Column: Navigation -->
+        <nav class="w-full md:w-1/5 bg-slate-100 p-6 shadow-lg overflow-y-auto">
+            <h1 class="text-2xl font-bold mb-6 text-slate-900 border-b-2 border-slate-300 pb-2">Unit 8: Momentum</h1>
+            <ul class="space-y-3">
+                <li><a class="nav-link block p-3 rounded-lg font-semibold active" data-target="overview">Unit Overview</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="teaching-context">Teaching Context</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="big-ideas">Big Ideas</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="standards">Standards</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="vocabulary">Key Vocabulary</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="misconceptions">Common Misconceptions</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="objectives">Learning Objectives</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="assessment">Assessment Plan</a></li>
+                <li><a class="nav-link block p-3 rounded-lg font-semibold" data-target="connections">Curriculum Connections</a></li>
+            </ul>
+        </nav>
+
+        <!-- Center Column: Interactive Schedule -->
+        <main class="w-full md:w-2/5 p-8 overflow-y-auto">
+            <h2 class="text-3xl font-bold mb-8">Block-by-Block Plan</h2>
+            <div class="relative pl-6 border-l-2 border-slate-300 space-y-8">
+                
+                <!-- Block 1 -->
+                <div class="schedule-block p-6 rounded-lg shadow-md border border-slate-200 bg-white" data-target="block1">
+                    <span class="absolute -left-3.5 flex items-center justify-center w-6 h-6 bg-slate-700 rounded-full text-white font-bold text-sm">1</span>
+                    <h3 class="text-xl font-bold mb-2">Block 1</h3>
+                    <p class="text-slate-600 font-semibold">Momentum & Impulse (8.1 - 8.2)</p>
+                    <p class="text-sm mt-2">Introduction to <span class="math-block">p = mv</span> and the "Safety" concept of Impulse.</p>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="schedule-block p-6 rounded-lg shadow-md border border-slate-200 bg-white" data-target="block2">
+                    <span class="absolute -left-3.5 flex items-center justify-center w-6 h-6 bg-slate-700 rounded-full text-white font-bold text-sm">2</span>
+                    <h3 class="text-xl font-bold mb-2">Block 2</h3>
+                    <p class="text-slate-600 font-semibold">Conservation & Bouncing (8.3 - 8.4)</p>
+                    <p class="text-sm mt-2">Connecting Newton's 3rd Law to Conservation and defining "Systems".</p>
+                </div>
+
+                <!-- Block 3 -->
+                <div class="schedule-block p-6 rounded-lg shadow-md border border-slate-200 bg-white" data-target="block3">
+                    <span class="absolute -left-3.5 flex items-center justify-center w-6 h-6 bg-slate-700 rounded-full text-white font-bold text-sm">3</span>
+                    <h3 class="text-xl font-bold mb-2">Block 3</h3>
+                    <p class="text-slate-600 font-semibold">The Momentum Lab</p>
+                    <p class="text-sm mt-2">Hands-on investigation of "Sticky" vs. "Bouncy" collisions.</p>
+                </div>
+
+                <!-- Block 4 -->
+                <div class="schedule-block p-6 rounded-lg shadow-md border border-slate-200 bg-white" data-target="block4">
+                    <span class="absolute -left-3.5 flex items-center justify-center w-6 h-6 bg-slate-700 rounded-full text-white font-bold text-sm">4</span>
+                    <h3 class="text-xl font-bold mb-2">Block 4</h3>
+                    <p class="text-slate-600 font-semibold">Collision Math & Review (8.5 - 8.6)</p>
+                    <p class="text-sm mt-2">Applying conservation to collision problems. Content diverges most sharply here.</p>
+                </div>
+
+                <!-- Block 5 -->
+                <div class="schedule-block p-6 rounded-lg shadow-md border border-slate-200 bg-white" data-target="block5">
+                    <span class="absolute -left-3.5 flex items-center justify-center w-6 h-6 bg-slate-700 rounded-full text-white font-bold text-sm">5</span>
+                    <h3 class="text-xl font-bold mb-2">Block 5</h3>
+                    <p class="text-slate-600 font-semibold">Summative Assessment</p>
+                    <p class="text-sm mt-2">Unit 8 Test and Honors Addendum.</p>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Right Column: Details Pane -->
+        <aside id="details-pane" class="w-full md:w-2/5 p-8 bg-white shadow-inner overflow-y-auto">
+            
+            <!-- Overview Content -->
+            <div id="overview-content" class="content-pane">
+                <h2 class="text-3xl font-bold mb-4">Unit Overview</h2>
+                <p class="text-lg text-slate-700 mb-4">This 5-block unit bridges Newton's Laws and Energy. It covers Momentum, Impulse, and Conservation using Hewitt's <em>Conceptual Physics</em> Chapter 8.</p>
+                
+                <div class="bg-slate-50 border border-slate-300 p-4 rounded-lg mb-4">
+                    <h4 class="font-bold mb-2">Class Structure</h4>
+                    <p class="text-sm mb-2">This unit is taught to <strong>two separate class sections</strong> on an A/B block schedule (75-minute periods):</p>
+                    <ul class="text-sm list-disc list-outside pl-5 space-y-1">
+                        <li><strong>Honors Physics:</strong> 10 students (STEM-focused, stronger math background)</li>
+                        <li><strong>Regular Conceptual Physics:</strong> 15 students (mixed math readiness)</li>
+                    </ul>
+                    <p class="text-sm mt-2">Each block shows differentiated content for both sections. The teacher delivers a full 75-minute lesson to each class separately.</p>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-300 text-yellow-800 p-4 rounded-lg">
+                    <h4 class="font-bold mb-2">The Big Idea (Hewitt)</h4>
+                    <p class="text-sm italic">"Momentum is conserved for all collisions as long as external forces don't interfere."</p>
+                </div>
+            </div>
+
+            <!-- Teaching Context Content -->
+            <div id="teaching-context-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Teaching Context</h2>
+                <p class="mb-4 text-slate-600">Instructional framework and expectations for lesson delivery.</p>
+                
+                <h3 class="text-xl font-bold mb-3">CHA Lesson Structure</h3>
+                <p class="text-sm mb-3">Each lesson should include these components (cycle DI→Practice→Check→Adjust for each main concept):</p>
+                <ol class="list-decimal list-outside pl-5 space-y-2 text-sm mb-6">
+                    <li><strong>Lesson Objective:</strong> Clear, measurable learning target posted for students.</li>
+                    <li><strong>Anticipatory Hook:</strong> Engaging opener connecting to prior knowledge or real-world context.</li>
+                    <li><strong>Direct Instruction/Modeling:</strong> Teacher explains and demonstrates the concept.</li>
+                    <li><strong>Guided Practice:</strong> Students practice with teacher support (whiteboard problems, think-pair-share).</li>
+                    <li><strong>Checking for Understanding:</strong> Quick assessment of student grasp (thumbs, exit ticket, verbal check).</li>
+                    <li><strong>Lesson Adjustment:</strong> Reteach, clarify, or extend based on check results.</li>
+                    <li><strong>Independent Practice:</strong> Students work problems without direct support (primarily homework).</li>
+                    <li><strong>Lesson Wrap Up:</strong> Summary, preview of next lesson, questions.</li>
+                </ol>
+
+                <h3 class="text-xl font-bold mb-3">Homework Philosophy</h3>
+                <div class="bg-slate-50 p-4 rounded-lg mb-4">
+                    <p class="text-sm mb-2"><strong>Purpose:</strong> Independent practice on day's lesson, consolidation of understanding, alignment with assessment.</p>
+                    <p class="text-sm mb-2"><strong>Design requirements:</strong></p>
+                    <ul class="text-sm list-disc list-outside pl-5 space-y-1">
+                        <li>Tractable from class content</li>
+                        <li>Clear instructions for absent students (self-teachable)</li>
+                        <li>Aligned with test format and questions</li>
+                        <li>Easy to grade (limited teacher time)</li>
+                    </ul>
+                    <p class="text-sm mt-3"><strong>Time limits (Harris 2006):</strong></p>
+                    <ul class="text-sm list-disc list-outside pl-5">
+                        <li>Regular: &lt;50 minutes per block</li>
+                        <li>Honors: &lt;75-100 minutes per block</li>
+                    </ul>
+                </div>
+
+                <h3 class="text-xl font-bold mb-3">Reading Accountability</h3>
+                <p class="text-sm">Short reading quizzes at the <strong>beginning</strong> of Blocks 1, 2, and 4 hold students accountable for assigned Hewitt reading. These assess prior preparation, not same-day content.</p>
+            </div>
+
+            <!-- Big Ideas Content -->
+            <div id="big-ideas-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Big Ideas</h2>
+                <p class="mb-6 text-slate-600">Enduring understandings for the unit, linking momentum to safety and conservation laws.</p>
+                <ul class="space-y-4">
+                    <li class="p-4 bg-slate-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg">Momentum is "Inertia in Motion"</h4>
+                        <p>A quantity (<span class="math">p = mv</span>) that dictates how hard it is to stop an object. Distinct from mass (inertia) and energy.</p>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg">The Impulse-Safety Theorem</h4>
+                        <p>Changing momentum requires Force over Time (<span class="math">Ft = Δmv</span>). Extending impact time (airbags, bending knees) reduces injury-causing force.</p>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg">Conservation is Absolute</h4>
+                        <p>In a closed system (no external forces), momentum is never lost, only transferred. Total momentum before = total momentum after.</p>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg">Bouncing Amplifies Force</h4>
+                        <p>Objects that bounce undergo greater change in momentum (<span class="math">Δp = 2mv</span>) than objects that stick, requiring larger impulse.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Standards Content -->
+            <div id="standards-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Standards</h2>
+                <p class="mb-6 text-slate-600">Power standards addressed, focusing on conservation and collision forces.</p>
+                <ul class="space-y-3 list-disc list-outside pl-5">
+                    <li class="mb-2">
+                        <strong>HS-PS2-2:</strong> Use mathematical representations to support the claim that the total momentum of a system of objects is conserved when there is no net force on the system.
+                    </li>
+                    <li class="mb-2">
+                        <strong>HS-PS2-3:</strong> Apply scientific and engineering ideas to design, evaluate, and refine a device that minimizes the force on a macroscopic object during a collision.
+                    </li>
+                    <li class="mb-2">
+                        <strong>Mathematical Practices:</strong> Algebraic rearrangement of <span class="math">Ft = Δmv</span>, solving 1D inelastic collision equations, and (Honors) geometric application of the Pythagorean theorem for 2D vectors.
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Vocabulary Content -->
+            <div id="vocabulary-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Key Vocabulary</h2>
+                <p class="mb-6 text-slate-600">Terms requiring explicit instruction. Students should be able to define, identify, and apply these concepts.</p>
+                
+                <div class="space-y-4">
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold"><span class="vocab-term">Momentum</span> (8.1)</h4>
+                        <p class="text-sm mt-1">Inertia in motion; mass × velocity. Symbol: <span class="math">p</span>. Units: kg·m/s</p>
+                        <p class="text-sm text-slate-500 mt-1">Formula: <span class="math">p = mv</span></p>
+                    </div>
+                    
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold"><span class="vocab-term">Impulse</span> (8.2)</h4>
+                        <p class="text-sm mt-1">Force × time interval; the cause of momentum change. Units: N·s (equivalent to kg·m/s)</p>
+                        <p class="text-sm text-slate-500 mt-1">Formula: <span class="math">J = Ft = Δp</span></p>
+                    </div>
+                    
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold"><span class="vocab-term">Law of Conservation of Momentum</span> (8.4)</h4>
+                        <p class="text-sm mt-1">In the absence of external forces, the total momentum of a system remains unchanged.</p>
+                        <p class="text-sm text-slate-500 mt-1">Formula: <span class="math">p<sub>before</sub> = p<sub>after</sub></span></p>
+                    </div>
+                    
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold"><span class="vocab-term">Elastic Collision</span> (8.5)</h4>
+                        <p class="text-sm mt-1">Collision where objects bounce without permanent deformation or heat generation. Kinetic energy is conserved.</p>
+                    </div>
+                    
+                    <div class="p-4 bg-slate-50 rounded-lg">
+                        <h4 class="font-bold"><span class="vocab-term">Inelastic Collision</span> (8.5)</h4>
+                        <p class="text-sm mt-1">Collision where objects become distorted and/or generate heat. In a "perfectly inelastic" collision, objects stick together.</p>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold mt-6 mb-3">Supporting Terms</h3>
+                <p class="text-sm">These terms should be understood but may not require explicit instruction:</p>
+                <ul class="text-sm list-disc list-outside pl-5 mt-2 space-y-1">
+                    <li><strong>System:</strong> The collection of objects being analyzed</li>
+                    <li><strong>Internal forces:</strong> Forces between objects within the system</li>
+                    <li><strong>External forces:</strong> Forces from outside the system</li>
+                    <li><strong>Vector quantity:</strong> Has both magnitude and direction</li>
+                </ul>
+            </div>
+
+            <!-- Misconceptions Content -->
+            <div id="misconceptions-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Common Misconceptions</h2>
+                <p class="mb-6 text-slate-600">Predictable student errors to anticipate and address. These often stem from intuitive physics conflicting with Newtonian mechanics.</p>
+                
+                <div class="space-y-4">
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "Impulse equals momentum"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Impulse equals <em>change</em> in momentum. An object can have large momentum but zero impulse if nothing is changing it.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Block 1, when introducing impulse-momentum theorem.</p>
+                    </div>
+
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "Heavier objects always have more momentum"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Momentum depends on both mass AND velocity. A fast car can have more momentum than a slow truck. A truck at rest has zero momentum.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Block 1. Use the truck vs. roller skate example from Hewitt.</p>
+                    </div>
+
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "Momentum is conserved only in elastic collisions"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external forces act. What differs is whether kinetic energy is conserved.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Block 2/3. The freight car coupling problem shows conservation in an inelastic collision.</p>
+                    </div>
+
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "Force and impulse are the same thing"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Impulse = Force × Time. The same impulse can result from a large force over a short time OR a small force over a long time. This is why airbags work.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Block 1. Haystack vs. wall example.</p>
+                    </div>
+
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "The bigger object exerts more force in a collision"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Newton's 3rd Law—the forces are equal and opposite. What differs is the acceleration (and thus velocity change) due to different masses.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Block 2. Bug vs. windshield example (test question #50).</p>
+                    </div>
+
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "Forgetting that momentum is a vector"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Direction matters! Objects moving in opposite directions have opposite-signed momenta. This is critical for conservation problems.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Block 4. When setting up collision equations, establish a sign convention (+/−).</p>
+                    </div>
+
+                    <div class="p-4 bg-red-50 rounded-lg border border-red-200">
+                        <h4 class="font-bold text-red-800">❌ "Confusing momentum with kinetic energy"</h4>
+                        <p class="text-sm mt-1"><strong>Correction:</strong> Momentum is <span class="math">mv</span> (linear in velocity); kinetic energy is <span class="math">½mv²</span> (quadratic). They have different units and different conservation rules. Double your speed → double your momentum, but quadruple your kinetic energy.</p>
+                        <p class="text-sm text-slate-600 mt-2"><em>Address in:</em> Throughout, but especially when discussing elastic vs. inelastic collisions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Objectives Content -->
+            <div id="objectives-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Learning Objectives</h2>
+                <p class="mb-6 text-slate-600">By the end of this unit, students will be able to...</p>
+                <h3 class="text-xl font-bold mb-3">All Students (Regular)</h3>
+                <ul class="space-y-3 list-disc list-outside pl-5 mb-6">
+                    <li>Define Momentum and calculate it using <span class="math">p = mv</span>.</li>
+                    <li>Apply the Impulse-Momentum theorem to explain safety features.</li>
+                    <li>Differentiate between Elastic (bouncy) and Inelastic (sticky) collisions.</li>
+                    <li>Calculate the final velocity of a 1D "perfectly inelastic" collision.</li>
+                    <li>Explain Conservation of Momentum conceptually.</li>
+                </ul>
+                <h3 class="text-xl font-bold mb-3 text-blue-700">Honors Students (Additionally)</h3>
+                <ul class="space-y-3 list-disc list-outside pl-5 text-blue-900">
+                    <li>Resolve 2D momentum vectors using right-triangle geometry.</li>
+                    <li>Derive the "stopping time" of a recoiling object using a multi-step Momentum → Impulse strategy.</li>
+                    <li>Analyze vector components in "glancing blow" collisions.</li>
+                </ul>
+            </div>
+
+            <!-- Assessment Content -->
+            <div id="assessment-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Assessment Plan</h2>
+                <p class="mb-6 text-slate-600">Assessments ensure Regular students master core concepts while Honors students are challenged with complex applications.</p>
+                
+                <h3 class="text-xl font-bold mb-3">Formative: Reading Quizzes</h3>
+                <p class="mb-4 text-sm">Short reading quizzes at the <strong>beginning</strong> of Blocks 1, 2, and 4. These assess prior reading preparation, not same-day content.</p>
+                
+                <h3 class="text-xl font-bold mb-3">Summative: Lab Report (Block 3)</h3>
+                <p class="mb-4 text-sm">Students submit a lab report demonstrating understanding of conservation through hands-on collision data.</p>
+
+                <h3 class="text-xl font-bold mb-3">Summative: Unit Test (Block 5)</h3>
+                
+                <div class="bg-slate-50 p-4 rounded-lg mb-4">
+                    <h4 class="font-bold mb-2">Test Format (Regular)</h4>
+                    <ul class="text-sm list-disc list-outside pl-5 space-y-1">
+                        <li><strong>True/False:</strong> 5 questions on core concepts</li>
+                        <li><strong>Multiple Choice:</strong> 8 questions (conceptual application)</li>
+                        <li><strong>Math Problems:</strong> 2 problems
+                            <ul class="list-disc list-outside pl-5 mt-1">
+                                <li>Calculate momentum given mass and motion data</li>
+                                <li>Conservation problem (e.g., roller skate push-off)</li>
+                            </ul>
+                        </li>
+                        <li><strong>Essay:</strong> 1 problem—the "Freight Car Coupling" problem (diesel engine hits stationary flatcar, find final velocity)</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-300 mb-4">
+                    <h4 class="font-bold mb-2 text-blue-700">Honors Addendum</h4>
+                    <p class="text-sm text-blue-900">Additional problems assessing:</p>
+                    <ul class="text-sm list-disc list-outside pl-5 text-blue-900">
+                        <li>2D vector analysis (Traffic Accident or Billiard Ball problems)</li>
+                        <li>Multi-step derivations (momentum → impulse → force/time)</li>
+                    </ul>
+                </div>
+
+                <h3 class="text-xl font-bold mb-3">Canonical Test Problems</h3>
+                <p class="text-sm mb-2">These problem types appear on the test and should be practiced in class and homework:</p>
+                <ol class="text-sm list-decimal list-outside pl-5 space-y-2">
+                    <li><strong>Runner momentum:</strong> Given mass (70 kg) and motion (400 m in 50 s), find average momentum. Requires finding velocity first.</li>
+                    <li><strong>Roller skate conservation:</strong> Two people push off each other on frictionless skates. Given one's resulting velocity, find the other's.</li>
+                    <li><strong>Freight car coupling:</strong> Engine (4× mass of flatcar) at 10 km/h hits stationary flatcar. They couple. Find final velocity. (This is THE canonical inelastic collision problem.)</li>
+                </ol>
+            </div>
+
+            <!-- Connections Content -->
+            <div id="connections-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Curriculum Connections</h2>
+                <p class="mb-6 text-slate-600">Connections to other academic and real-world contexts.</p>
+                
+                <h3 class="text-xl font-bold mb-3">Cross-Curricular</h3>
+                <ul class="space-y-3 list-disc list-outside pl-5 mb-6">
+                    <li><strong>Driver's Education:</strong> Crash safety mechanics (crumple zones increasing <span class="math">Δt</span>).</li>
+                    <li><strong>Mathematics (Algebra I):</strong> Isolating variables in multi-term equations.</li>
+                    <li><strong>Mathematics (Geometry):</strong> Vector addition and Pythagorean triples (Honors).</li>
+                    <li><strong>Sports Science:</strong> Biomechanics of jumping (bending knees) and striking.</li>
+                </ul>
+
+                <h3 class="text-xl font-bold mb-3">Biblical Integration</h3>
+                <ul class="space-y-3">
+                    <li class="p-4 bg-slate-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg">Conservation & Faithfulness</h4>
+                        <p>The physical law that "momentum is not lost" reflects a Creator who establishes a consistent, orderly universe.</p>
+                    </li>
+                    <li class="p-4 bg-slate-50 rounded-lg shadow-sm">
+                        <h4 class="font-bold text-lg">Stewardship of Life</h4>
+                        <p>The study of Impulse applies directly to saving lives through safety engineering.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Block 1 Content -->
+            <div id="block1-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Block 1</h2>
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">Topics: Momentum (8.1) & Impulse (8.2)</h3>
+                
+                <div class="bg-green-50 border border-green-300 p-3 rounded-lg mb-4">
+                    <h4 class="font-bold text-green-800">Learning Objective</h4>
+                    <p class="text-sm">Students will define momentum, calculate it using <span class="math">p = mv</span>, and explain how impulse changes momentum.</p>
+                </div>
+
+                <h4 class="font-bold mb-2">Reading Quiz</h4>
+                <p class="text-sm mb-4">Short quiz at block start on Hewitt 8.1-8.2.</p>
+
+                <h4 class="font-bold mb-2">Key Concepts to Teach</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4 space-y-1">
+                    <li>Momentum = mass × velocity (<span class="math">p = mv</span>)</li>
+                    <li>Impulse = force × time (<span class="math">J = Ft</span>)</li>
+                    <li>Impulse-momentum theorem: <span class="math">Ft = Δ(mv)</span></li>
+                    <li>Extending time reduces force (for same impulse)</li>
+                </ul>
+
+                <h4 class="font-bold mb-2">Canonical Examples</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4 space-y-2">
+                    <li><strong>Truck vs. Roller Skate:</strong> Which has more momentum? (Depends on both mass AND velocity. Truck at rest has zero momentum.)</li>
+                    <li><strong>Haystack vs. Wall:</strong> Car crashes into each at same speed. Same momentum change, same impulse—but very different forces because of different times.</li>
+                    <li><strong>Catching a Ball:</strong> Why extend your hands backward? Increases time, reduces force.</li>
+                    <li><strong>Car Crumple Zones:</strong> Video analysis of slow-motion crash footage showing how crumpling extends impact time.</li>
+                </ul>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border">
+                        <h4 class="font-bold mb-2">Regular Section</h4>
+                        <p class="text-sm">Focus on conceptual understanding via analogies. Emphasize the inverse relationship: Long time = Small Force. Practice basic <span class="math">p = mv</span> calculations.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-300">
+                        <h4 class="font-bold mb-2 text-blue-700">Honors Section</h4>
+                        <p class="text-sm text-blue-900">Derive <span class="math">Ft = Δmv</span> from Newton's Second Law (<span class="math">F = ma</span>, where <span class="math">a = Δv/t</span>). Rearrange to show why the equation works.</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold mb-2">Formative Assessment Ideas</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4">
+                    <li>Pre-Math Warmup: Can students find velocity from <span class="math">v = d/t</span>? (Prerequisite for momentum calculations)</li>
+                    <li>Whiteboard: Given mass and velocity, calculate momentum.</li>
+                    <li>Think-Pair-Share: Why do gymnasts use thick mats?</li>
+                </ul>
+
+                <h4 class="font-bold mb-2">Homework Alignment</h4>
+                <p class="text-sm">Assign problems requiring: (1) basic <span class="math">p = mv</span> calculations, (2) conceptual impulse questions (which surface is safer?), (3) reading check questions from Hewitt.</p>
+            </div>
+
+            <!-- Block 2 Content -->
+            <div id="block2-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Block 2</h2>
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">Topics: Bouncing (8.3) & Conservation (8.4)</h3>
+                
+                <div class="bg-green-50 border border-green-300 p-3 rounded-lg mb-4">
+                    <h4 class="font-bold text-green-800">Learning Objective</h4>
+                    <p class="text-sm">Students will explain why bouncing increases impulse and state the law of conservation of momentum.</p>
+                </div>
+
+                <h4 class="font-bold mb-2">Reading Quiz</h4>
+                <p class="text-sm mb-4">Short quiz at block start on Hewitt 8.3-8.4.</p>
+
+                <h4 class="font-bold mb-2">Key Concepts to Teach</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4 space-y-1">
+                    <li>Bouncing requires greater impulse than stopping (<span class="math">Δp = 2mv</span> for complete reversal)</li>
+                    <li>Internal vs. external forces</li>
+                    <li>Defining a "system"</li>
+                    <li>Conservation: <span class="math">p<sub>before</sub> = p<sub>after</sub></span> (when no external forces)</li>
+                </ul>
+
+                <h4 class="font-bold mb-2">Canonical Examples</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4 space-y-2">
+                    <li><strong>Flower Pot on Head:</strong> Why is a bouncing pot worse than one that stops? (Greater Δp means greater impulse means greater force.)</li>
+                    <li><strong>Pelton Wheel:</strong> Curved paddles cause water to bounce (U-turn), doubling the impulse compared to flat paddles.</li>
+                    <li><strong>Cannon Recoil:</strong> System momentum starts at zero. Ball gains +p, cannon must gain −p. Momentum is transferred, not created.</li>
+                    <li><strong>Newton's Cradle:</strong> Demonstration of momentum transfer in elastic collisions.</li>
+                </ul>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border">
+                        <h4 class="font-bold mb-2">Regular Section</h4>
+                        <p class="text-sm">Conceptual focus: "Why does the cannon kick back?" Answer: The cannon-ball system starts with 0 momentum. Ball gets +p, cannon must get −p.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-300">
+                        <h4 class="font-bold mb-2 text-blue-700">Honors Section</h4>
+                        <p class="text-sm text-blue-900">Introduce variable-mass problems conceptually (rocket propulsion). The mass of the system changes as exhaust is expelled.</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold mb-2">Formative Assessment Ideas</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4">
+                    <li>Whiteboard "System" Checks: Draw a circle around the system. Identify which forces are internal vs. external.</li>
+                    <li>Prediction: If I fire a dart at a box, will the box move more if the dart sticks or bounces?</li>
+                </ul>
+
+                <h4 class="font-bold mb-2">Homework Alignment</h4>
+                <p class="text-sm">Assign problems on: (1) bouncing vs. stopping impulse comparisons, (2) identifying systems and internal/external forces, (3) conceptual conservation questions.</p>
+            </div>
+            
+            <!-- Block 3 Content -->
+            <div id="block3-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Block 3</h2>
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">Topic: The Momentum Lab</h3>
+                
+                <div class="bg-green-50 border border-green-300 p-3 rounded-lg mb-4">
+                    <h4 class="font-bold text-green-800">Learning Objective</h4>
+                    <p class="text-sm">Students will collect data to verify conservation of momentum and distinguish between elastic and inelastic collisions.</p>
+                </div>
+
+                <p class="mb-4">Hands-on block using collision carts or marbles. Goal: provide tangible experience with conservation before tackling collision algebra. <strong>Lab is hard-limited to one block</strong>—design must ensure completion within 75 minutes.</p>
+                
+                <h4 class="font-bold mb-2">Lab Focus</h4>
+                <ul class="text-sm list-disc list-outside pl-5 mb-4 space-y-1">
+                    <li>Compare "Sticky" (inelastic) vs. "Bouncy" (elastic) collisions</li>
+                    <li>Measure/calculate <span class="math">p<sub>before</sub></span> and <span class="math">p<sub>after</sub></span></li>
+                    <li>Verify that momentum is approximately conserved</li>
+                    <li>Account for discrepancies (friction as external force)</li>
+                </ul>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border">
+                        <h4 class="font-bold mb-2">Regular Section</h4>
+                        <p class="text-sm">Focus on qualitative and basic quantitative analysis. "Does <span class="math">p<sub>before</sub> ≈ p<sub>after</sub></span>?" Observe and describe the difference between sticky and bouncy collisions.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-300">
+                        <h4 class="font-bold mb-2 text-blue-700">Honors Section</h4>
+                        <p class="text-sm text-blue-900">Lab includes mandatory <strong>Error Analysis</strong> section. Students must quantitatively estimate friction's effect and explain why momentum was not perfectly conserved.</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold mb-2">Deliverable</h4>
+                <p class="text-sm">Lab Report due (summative assessment). Should include data tables, calculations, and conclusion about conservation.</p>
+            </div>
+
+            <!-- Block 4 Content -->
+            <div id="block4-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Block 4</h2>
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">Topics: 1D Collisions (8.5) / 2D Vectors (8.6)</h3>
+                
+                <div class="bg-green-50 border border-green-300 p-3 rounded-lg mb-4">
+                    <h4 class="font-bold text-green-800">Learning Objective</h4>
+                    <p class="text-sm"><strong>Regular:</strong> Solve 1D inelastic collision problems algebraically. <strong>Honors:</strong> Apply conservation in 2D using vector addition.</p>
+                </div>
+
+                <p class="mb-4">This is where Regular and Honors content diverges most sharply. Both sections apply concepts from Blocks 1-3 to mathematical problem-solving—making this block function as integrated review.</p>
+                
+                <h4 class="font-bold mb-2">Reading Quiz</h4>
+                <p class="text-sm mb-4">Short quiz at block start on assigned reading.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border">
+                        <h4 class="font-bold mb-2">Regular Section: 1D Collision Drill</h4>
+                        <p class="text-sm mb-2">Goal: Complete mastery of algebra for 1D inelastic collisions.</p>
+                        <p class="text-sm mb-2"><strong>The Equation:</strong></p>
+                        <p class="text-sm mb-2 text-center"><span class="math-block">m₁v₁ + m₂v₂ = (m₁+m₂)v<sub>final</sub></span></p>
+                        <p class="text-sm mb-2"><strong>Canonical Problems:</strong></p>
+                        <ul class="text-sm list-disc list-outside pl-4 space-y-1">
+                            <li><strong>Freight Car Coupling:</strong> 4m engine at 10 km/h hits stationary 1m flatcar. Find v<sub>final</sub>. (Answer: 8 km/h)</li>
+                            <li><strong>Big Fish/Little Fish:</strong> 6-kg fish at 1 m/s swallows 2-kg fish at rest. Find v<sub>final</sub>. (Answer: 0.75 m/s)</li>
+                            <li><strong>Roller Skate Push:</strong> 30-kg girl pushes 25-kg boy, boy moves at 1 m/s. Find girl's speed.</li>
+                        </ul>
+                        <p class="text-sm mt-2"><strong>Activity:</strong> Whiteboard drill. Solve for v<sub>final</sub>, m₁, v₁, etc.</p>
+                        <p class="text-sm mt-2 text-red-600"><strong>Note:</strong> No vectors. Focus purely on algebra mastery.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-300">
+                        <h4 class="font-bold mb-2 text-blue-700">Honors Section: 2D Vector Extension</h4>
+                        <p class="text-sm text-blue-900 mb-2">Goal: Apply conservation laws in two dimensions.</p>
+                        <p class="text-sm text-blue-900 mb-2"><strong>The Approach:</strong></p>
+                        <p class="text-sm text-blue-900 mb-2">Momentum is conserved separately in x and y directions. Use Pythagorean theorem to find resultant.</p>
+                        <p class="text-sm text-blue-900 mb-2"><strong>Canonical Problems:</strong></p>
+                        <ul class="text-sm list-disc list-outside pl-4 space-y-1 text-blue-900">
+                            <li><strong>Traffic Accident:</strong> Car A going east, Car B going north, they collide and stick. Find direction and speed of wreckage.</li>
+                            <li><strong>Billiard Ball:</strong> Cue ball hits stationary ball at angle. Analyze resulting momentum vectors.</li>
+                            <li><strong>Exploding Firecracker:</strong> Falling firecracker explodes into two pieces. Vector sum of fragment momenta equals original.</li>
+                        </ul>
+                        <p class="text-sm text-blue-900 mt-2"><strong>Activity:</strong> Collaborative problem solving with vector diagrams.</p>
+                    </div>
+                </div>
+
+                <h4 class="font-bold mb-2">Review Integration</h4>
+                <p class="text-sm">Both tracks inherently review prior content: students must recall <span class="math">p = mv</span> (Block 1), conservation principle (Block 2), and collision types (Block 3) to solve these problems.</p>
+
+                <h4 class="font-bold mb-2">Homework Alignment</h4>
+                <p class="text-sm"><strong>Regular:</strong> 4-6 coupling/collision problems similar to test format. <strong>Honors:</strong> 2-3 additional 2D vector problems.</p>
+            </div>
+
+            <!-- Block 5 Content -->
+            <div id="block5-content" class="content-pane hidden">
+                <h2 class="text-3xl font-bold mb-4">Block 5</h2>
+                <h3 class="text-xl font-semibold text-slate-700 mb-4">Topic: Summative Assessment</h3>
+                <p class="mb-4">Students demonstrate mastery of unit learning objectives.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 bg-slate-50 rounded-lg border">
+                        <h4 class="font-bold mb-2">Regular Section</h4>
+                        <p class="text-sm">Complete the <strong>Unit 8 Test</strong>:</p>
+                        <ul class="text-sm list-disc list-outside pl-4 mt-2">
+                            <li>5 True/False</li>
+                            <li>8 Multiple Choice</li>
+                            <li>2 Math Problems</li>
+                            <li>1 Essay (Freight Car problem)</li>
+                        </ul>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded-lg border border-blue-300">
+                        <h4 class="font-bold mb-2 text-blue-700">Honors Section</h4>
+                        <p class="text-sm text-blue-900">Complete the <strong>Unit 8 Test</strong> plus the <strong>Honors Addendum</strong> assessing 2D vector analysis and multi-step derivations.</p>
+                    </div>
+                </div>
+            </div>
+
+        </aside>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const allLinks = document.querySelectorAll('.nav-link, .schedule-block');
+            const allContentPanes = document.querySelectorAll('.content-pane');
+            const detailsPane = document.getElementById('details-pane');
+
+            let lastActiveLink = document.querySelector('.nav-link.active');
+
+            function showContent(targetId) {
+                allContentPanes.forEach(pane => {
+                    pane.classList.add('hidden');
+                });
+
+                const targetPane = document.getElementById(targetId + '-content');
+                if (targetPane) {
+                    targetPane.classList.remove('hidden');
+                    detailsPane.scrollTop = 0;
+                }
+            }
+
+            allLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('data-target');
+                    
+                    if (lastActiveLink) {
+                        lastActiveLink.classList.remove('active');
+                    }
+                    link.classList.add('active');
+                    lastActiveLink = link;
+
+                    showContent(targetId);
+                });
+            });
+
+            showContent('overview');
+        });
+    </script>
+
+</body>
+</html>
